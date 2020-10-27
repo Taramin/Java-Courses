@@ -41,7 +41,7 @@ public class Calculator {
         if(numb1.matches("[-]?\\D+")){
             throw new ExceptionIncorrectInput();
         }
-        else if (numb1.startsWith("-")){
+        else if (numb1.contains("-")){
             throw new ExceptionNotPositiveNumber();
         }
         return Math.sqrt(Double.parseDouble(numb1));

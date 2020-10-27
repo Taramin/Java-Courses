@@ -1,7 +1,9 @@
 package com.company;
 
 public class ExceptionIncorrectFormatSqrt extends RuntimeException {
-    public ExceptionIncorrectFormatSqrt() {
-        super("корень можно извлекать только в формате sqrt(a)");
+    @Override
+    public String getMessage() {
+        System.out.println("\nкорень можно извлекать только в формате sqrt(a)\n");
+        return null;
     }
 }

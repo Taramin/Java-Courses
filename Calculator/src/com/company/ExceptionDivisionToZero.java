@@ -1,7 +1,9 @@
 package com.company;
 
 public class ExceptionDivisionToZero extends RuntimeException {
-    public ExceptionDivisionToZero() {
-        super("не дели на ноль, так нельзя");
+    @Override
+    public String getMessage() {
+        System.out.println("\nне дели на ноль, так нельзя\n");
+        return null;
     }
 }

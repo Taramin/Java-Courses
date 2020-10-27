@@ -1,7 +1,9 @@
 package com.company;
 
 public class ExceptionNotPositiveNumber extends RuntimeException {
-    public ExceptionNotPositiveNumber() {
-        super("не надо писать отрицательные числа там где нельзя");
+    @Override
+    public String getMessage() {
+        System.out.println("\nне надо писать отрицательные числа там где нельзя\n");
+        return null;
     }
 }

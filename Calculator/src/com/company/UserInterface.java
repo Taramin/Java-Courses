@@ -12,15 +12,15 @@ public class UserInterface {
         }
     }
 */
-    public void menu() throws IOException {
-        System.out.println("Enter something please");
+    public void menu() throws RuntimeException, IOException {
+        System.out.println("\nEnter something please");
         Scanner input = new Scanner(System.in);
         String operation = input.nextLine();
         System.out.print("="+formulaAnalysis(operation)+"\n");
         //inputFile.write("="+formulaAnalysis(operation));
 
     }
-    private String formulaAnalysis(String all_operations) throws IOException {
+    private String formulaAnalysis(String all_operations) throws RuntimeException, IOException {
         ArrayList <String> constituents = new ArrayList<>(divideIntoConstituents(all_operations));
         Calculator calculator = new Calculator();
         constituents = extractRoot(constituents);
@@ -74,7 +74,7 @@ public class UserInterface {
         //тут надо как-то записать в файл ответ file.toString()
     }
 
-    private ArrayList <String> extractRoot(ArrayList <String> constituents){
+    private ArrayList <String> extractRoot(ArrayList <String> constituents) throws RuntimeException{
         for(int i=0; i<constituents.size(); i++){
             if (constituents.get(i).startsWith("sqrt")){
                 if(!(constituents.get(i).startsWith("sqrt(")) && !(constituents.get(i).endsWith(")"))){
