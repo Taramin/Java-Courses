@@ -22,7 +22,18 @@ public class UserInterface {
         Calculator calculator = new Calculator();
         constituents = extractRoot(constituents);
 
-        for(int i=0; i<constituents.size(); i++){
+        for (int i = 0; i < constituents.size(); i++) {
+            if (constituents.get(i).equals("^")) {
+                double res = calculator.exponentiation(constituents.get(i - 1), constituents.get(i + 1));
+                constituents.remove(i + 1);
+                constituents.remove(i);
+                constituents.remove(i - 1);
+                constituents.add(i - 1, String.valueOf(res));
+                i--;
+            }
+        }
+
+        for (int i = 0; i < constituents.size(); i++) {
             if (constituents.get(i).equals("/")) {
                 double res = calculator.division(constituents.get(i - 1), constituents.get(i + 1));
                 constituents.remove(i + 1);
