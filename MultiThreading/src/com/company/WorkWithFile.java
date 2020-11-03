@@ -57,8 +57,7 @@ public class WorkWithFile {
                 }
             }
 
-            String pathToResult = "C:\\Users\\Даша\\IdeaProjects\\MultiThreading\\" +
-                    "src\\com\\company\\FilesDirectory\\result.txt";
+            String pathToResult = "src\\com\\company\\FilesDirectory\\result.txt";
             writeToFile(pathToResult, typeOfOperation, numbers, t);
 
         } catch (IOException e) {
