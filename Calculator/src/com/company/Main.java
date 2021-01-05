@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -19,16 +20,17 @@ public class Main {
 	7/0 = деление на ноль запрещено
 */
     public static void main(String[] args) throws IOException {
-        while(true) {
+
+        while (true) {
             try {
                 UserInterface a = new UserInterface();
                 a.menu();
-            }
-            catch(RuntimeException e){
-               e.getMessage();
+            } catch (RuntimeException e) {
+                e.getMessage();
             } catch (IOException e) {
                 e.getMessage();
             }
         }
+
     }
 }
